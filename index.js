@@ -1,5 +1,5 @@
 // String without a space or any specail char
-//| III    | Hello World            | Ellohay Orldway 
+//| IV     | Hello, world!          | Ellohay, orldway!            |
 
 
 //Assuming String with a space
@@ -7,11 +7,18 @@ function getPigLatin(input){
     let r ="";
     let start = "";
     let flg = false;
+    let checkSC = false;
+    let len =0;
     if(input[0] === input[0].toUpperCase()) flg = true;
-    for(let i=0; i<input.length;i++){
+    if(input[input.length-1].toUpperCase() === input[input.length-1].toLowerCase()) checkSC= true;
+    if(checkSC) len = input.length-1;
+    else len = input.length
+    for(let i=0; i<len;i++){
         if(input[i] === 'a' || input[i]=== 'e' || input[i] === 'i' || input[i]==='o' || input[i]==='u'){
             start = input.slice(0,i)
-            r= (input.slice(i,input.length) + start + "ay").toLowerCase();
+           if(checkSC) r= (input.slice(i,len) + start + "ay"+ input[len]).toLowerCase();
+           else r= (input.slice(i,len) + start + "ay").toLowerCase();
+
             break;
         }
     }
@@ -28,5 +35,5 @@ function getResult(inp){
     return result.trim();
 }
 
-let res= getResult("Hello World");
+let res= getResult("Hello world");
 console.log(res);
