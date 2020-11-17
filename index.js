@@ -1,9 +1,10 @@
 // String without a space or any specail char
-//| IV     | Hello, world!          | Ellohay, orldway!            |
+//|V      | eat apples             | eatay applesay  
 
 
 //Assuming String with a space
 function getPigLatin(input){
+    console.log
     let r ="";
     let start = "";
     let flg = false;
@@ -35,5 +36,5 @@ function getResult(inp){
     return result.trim();
 }
 
-let res= getResult("Hello world");
+let res= getResult("Hello, world!");
 console.log(res);
